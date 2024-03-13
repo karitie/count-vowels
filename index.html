@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Count Vowels</title>
+<style>
+  body {
+    font-family: Arial;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <!-- Write a program that counts the number of vowels in a sentence. -->
+<h1>Count Vowels</h1>
+<input type="text" id="inputSentence" placeholder="Enter a sentence">
+<button onclick="countVowels()">Count</button>
+<script>
+  const countVowels = () => {
+    const inputSentence = document.getElementById('inputSentence').value;
+    if (inputSentence === '') {
+      console.log('Please enter a sentence.');
+      return;
+    }
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    const lowerCaseSentence = inputSentence.toLowerCase();
+    let vowelCount = 0;
+    for (let i = 0; i < lowerCaseSentence.length; i++) {
+      if (vowels.includes(lowerCaseSentence[i])) {
+        vowelCount++;
+      }
+    }
+    console.log('Number of vowels:', vowelCount);
+  };
+</script>
+</body>
+</html>
